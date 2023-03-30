@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hyria_MyFS
 {
-    public partial class Form1 : Form
+    public partial class mainForm : Form
     {
-        public Form1()
+        public mainForm()
         {
             InitializeComponent();
         }
@@ -33,6 +33,16 @@ namespace Hyria_MyFS
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
         {
 
         }
