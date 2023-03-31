@@ -61,8 +61,6 @@ namespace Hyria_MyFS
             item.SubItems.Add(size.ToString());
             item.SubItems.Add((hiddenChar.ToString()) + ", " + (readOnlyChar.ToString()) + ", " + (authorChar));
             item.SubItems.Add(sectors.ToString());
-            
-            
             item.Tag = tagname;
 
             // Add the new item to the fileSystemBox ListView
@@ -87,20 +85,17 @@ namespace Hyria_MyFS
         private void rmvBtn_Click(object sender, EventArgs e)
         {
             addBtn.Enabled = !addBtn.Enabled;
-            var selectedItems = fileSystemBox.SelectedItems.Cast<string>().ToList();
-            foreach (var item in selectedItems)
-            {
-                fileSystemBox.Items.Remove(item);
-            }
 
-            // Remove the selected items from the listofSectors
+            // Remove the selected items from both lists
             foreach (ListViewItem item in listofSectors.Items)
             {
-                if (selectedItems.Contains(item.Tag.ToString()))
+                if (item.Tag.ToString() == fileSystemBox.SelectedItems[0].Tag.ToString())
                 {
                     listofSectors.Items.Remove(item);
+                    break;
                 }
             }
+            fileSystemBox.Items.Remove(fileSystemBox.SelectedItems[0]);
 
         }
 
@@ -157,7 +152,6 @@ namespace Hyria_MyFS
             // to prevent the selection from appearing when the control loses focus
             //listofSectors.HideSelection = true;
         }
-
         private void fileSystemBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -172,5 +166,7 @@ namespace Hyria_MyFS
         {
 
         }
+
+        
     }
 }
