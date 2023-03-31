@@ -93,7 +93,7 @@ namespace Hyria_MyFS
 
                 for (int i = 1; i <= sectors; i++)
                 {
-
+                    
                     // Add the new entry to the list
                     ListViewItem sitem = new ListViewItem(counter.ToString());
                     sitem.SubItems.Add(filename);
@@ -120,6 +120,7 @@ namespace Hyria_MyFS
 
 
             // resetting text boxes after entry
+            listofSectors.Sort();
             filenameBoxInp.Clear();
             extnsBoxInp.Clear();
             sizeBoxInp.Clear();
@@ -202,7 +203,7 @@ namespace Hyria_MyFS
             // Set the ListView's HideSelection property to true
             // to prevent the selection from appearing when the control loses focus
             listofSectors.HideSelection = true;
-            listofSectors.Sort();
+            
         }
         private void fileSystemBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -233,6 +234,11 @@ namespace Hyria_MyFS
         private void listofSectors_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
         {
         
+        }
+
+        private void listofSectors_Layout(object sender, LayoutEventArgs e)
+        {
+
         }
     }
 }

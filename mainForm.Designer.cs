@@ -83,18 +83,20 @@ namespace Hyria_MyFS
             this.listofSectors.ForeColor = System.Drawing.SystemColors.Desktop;
             this.listofSectors.FullRowSelect = true;
             this.listofSectors.GridLines = true;
+            this.listofSectors.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listofSectors.HideSelection = false;
             this.listofSectors.MultiSelect = false;
             this.listofSectors.Name = "listofSectors";
             this.listofSectors.ShowGroups = false;
             this.listofSectors.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listofSectors.TileSize = new System.Drawing.Size(50, 50);
+            this.listofSectors.TileSize = new System.Drawing.Size(20, 20);
             this.listofSectors.UseCompatibleStateImageBehavior = false;
             this.listofSectors.View = System.Windows.Forms.View.Details;
             this.listofSectors.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listofSectors_ColumnWidthChanged);
             this.listofSectors.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listofSectors_ColumnWidthChanging);
             this.listofSectors.SelectedIndexChanged += new System.EventHandler(this.listofSectors_SelectedIndexChanged);
             this.listofSectors.ContextMenuStripChanged += new System.EventHandler(this.listofSectors_ContextMenuStripChanged);
+            this.listofSectors.Layout += new System.Windows.Forms.LayoutEventHandler(this.listofSectors_Layout);
             // 
             // Index
             // 
@@ -258,6 +260,7 @@ namespace Hyria_MyFS
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.fileSystemBox);
             this.Controls.Add(this.sizeBoxInp);
