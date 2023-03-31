@@ -1,5 +1,6 @@
 # File-Storage-System
 Creating a windows app using C#, Visual Studio, and .NET framework
+![duck](https://user-images.githubusercontent.com/71193841/229027127-27788a30-7745-4da6-8c9d-50c1072b1153.jpg)
 
 ---
 
