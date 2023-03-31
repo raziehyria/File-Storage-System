@@ -33,32 +33,31 @@ namespace Hyria_MyFS
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.Control, null);
             this.duckIMG = new System.Windows.Forms.PictureBox();
-            this.fsList = new System.Windows.Forms.ListView();
+            this.listofSectorsList = new System.Windows.Forms.ListView();
             this.FSLName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FSExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FSLSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FSLAttributes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FSLSector = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.fileNameLabel = new System.Windows.Forms.Label();
             this.fileSizeLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.rmvButton = new System.Windows.Forms.Button();
-            this.filenameBox = new System.Windows.Forms.TextBox();
-            this.filesizeBox = new System.Windows.Forms.TextBox();
             this.fsSecLabel = new System.Windows.Forms.Label();
             this.appBanner = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.sectorSizBox = new System.Windows.Forms.TextBox();
             this.sectorSizLabel = new System.Windows.Forms.Label();
             this.instructionLabel = new System.Windows.Forms.Label();
-            this.hiddenChkBox = new System.Windows.Forms.CheckBox();
-            this.readChkBox = new System.Windows.Forms.CheckBox();
-            this.extnsionBox = new System.Windows.Forms.TextBox();
             this.extnsionLabel = new System.Windows.Forms.Label();
-            this.authorChkBox = new System.Windows.Forms.CheckBox();
-            this.authBox = new System.Windows.Forms.TextBox();
-            this.listofSectors = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FSLSector = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fileSystemBox = new System.Windows.Forms.ListBox();
+            this.listofSecLabel = new System.Windows.Forms.Label();
+            this.rmvBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.hiddnChkBx = new System.Windows.Forms.CheckBox();
+            this.readonlyChkBx = new System.Windows.Forms.CheckBox();
+            this.authorChkBx = new System.Windows.Forms.CheckBox();
+            this.filenameBoxInp = new System.Windows.Forms.TextBox();
+            this.extnsBoxInp = new System.Windows.Forms.TextBox();
+            this.sizeBoxInp = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.duckIMG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,27 +70,27 @@ namespace Hyria_MyFS
             this.duckIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.duckIMG.TabIndex = 0;
             this.duckIMG.TabStop = false;
-            this.duckIMG.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // fsList
+            // listofSectorsList
             // 
-            this.fsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listofSectorsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.FSLName,
             this.FSExtension,
             this.FSLSize,
             this.FSLAttributes,
             this.FSLSector});
-            this.fsList.HideSelection = false;
+            this.listofSectorsList.HideSelection = false;
             listViewItem1.ToolTipText = "Current files in File System";
-            this.fsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            this.listofSectorsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.fsList.Location = new System.Drawing.Point(520, 66);
-            this.fsList.Name = "fsList";
-            this.fsList.Size = new System.Drawing.Size(359, 380);
-            this.fsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.fsList.TabIndex = 1;
-            this.fsList.UseCompatibleStateImageBehavior = false;
-            this.fsList.View = System.Windows.Forms.View.Details;
+            this.listofSectorsList.Location = new System.Drawing.Point(520, 66);
+            this.listofSectorsList.Name = "listofSectorsList";
+            this.listofSectorsList.Size = new System.Drawing.Size(359, 380);
+            this.listofSectorsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listofSectorsList.TabIndex = 1;
+            this.listofSectorsList.UseCompatibleStateImageBehavior = false;
+            this.listofSectorsList.View = System.Windows.Forms.View.Details;
+            this.listofSectorsList.SelectedIndexChanged += new System.EventHandler(this.listofSectorsList_SelectedIndexChanged);
             // 
             // FSLName
             // 
@@ -116,6 +115,12 @@ namespace Hyria_MyFS
             this.FSLAttributes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.FSLAttributes.Width = 70;
             // 
+            // FSLSector
+            // 
+            this.FSLSector.Text = "Sectors";
+            this.FSLSector.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.FSLSector.Width = 70;
+            // 
             // fileNameLabel
             // 
             this.fileNameLabel.AutoSize = true;
@@ -124,7 +129,6 @@ namespace Hyria_MyFS
             this.fileNameLabel.Size = new System.Drawing.Size(57, 13);
             this.fileNameLabel.TabIndex = 2;
             this.fileNameLabel.Text = "File Name:";
-            this.fileNameLabel.Click += new System.EventHandler(this.selFile1_Click);
             // 
             // fileSizeLabel
             // 
@@ -134,38 +138,6 @@ namespace Hyria_MyFS
             this.fileSizeLabel.Size = new System.Drawing.Size(47, 13);
             this.fileSizeLabel.TabIndex = 3;
             this.fileSizeLabel.Text = "File size:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 405);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // rmvButton
-            // 
-            this.rmvButton.Location = new System.Drawing.Point(337, 375);
-            this.rmvButton.Name = "rmvButton";
-            this.rmvButton.Size = new System.Drawing.Size(75, 23);
-            this.rmvButton.TabIndex = 6;
-            this.rmvButton.Text = "Remove";
-            this.rmvButton.UseVisualStyleBackColor = true;
-            // 
-            // filenameBox
-            // 
-            this.filenameBox.Location = new System.Drawing.Point(12, 221);
-            this.filenameBox.Name = "filenameBox";
-            this.filenameBox.Size = new System.Drawing.Size(100, 20);
-            this.filenameBox.TabIndex = 8;
-            // 
-            // filesizeBox
-            // 
-            this.filesizeBox.Location = new System.Drawing.Point(12, 299);
-            this.filesizeBox.Name = "filesizeBox";
-            this.filesizeBox.Size = new System.Drawing.Size(100, 20);
-            this.filesizeBox.TabIndex = 9;
             // 
             // fsSecLabel
             // 
@@ -177,7 +149,6 @@ namespace Hyria_MyFS
             this.fsSecLabel.Size = new System.Drawing.Size(204, 31);
             this.fsSecLabel.TabIndex = 10;
             this.fsSecLabel.Text = "File System Listbox";
-            this.fsSecLabel.Click += new System.EventHandler(this.label3_Click);
             // 
             // appBanner
             // 
@@ -189,7 +160,6 @@ namespace Hyria_MyFS
             this.appBanner.Size = new System.Drawing.Size(220, 31);
             this.appBanner.TabIndex = 11;
             this.appBanner.Text = "Razie\'s File Manager ";
-            this.appBanner.Click += new System.EventHandler(this.label4_Click);
             // 
             // exitButton
             // 
@@ -199,7 +169,7 @@ namespace Hyria_MyFS
             this.exitButton.TabIndex = 12;
             this.exitButton.Text = "Exit Program";
             this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.button4_Click);
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // sectorSizBox
             // 
@@ -218,7 +188,6 @@ namespace Hyria_MyFS
             this.sectorSizLabel.Size = new System.Drawing.Size(61, 13);
             this.sectorSizLabel.TabIndex = 14;
             this.sectorSizLabel.Text = "Sector Size";
-            this.sectorSizLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // instructionLabel
             // 
@@ -231,33 +200,6 @@ namespace Hyria_MyFS
             this.instructionLabel.TabIndex = 15;
             this.instructionLabel.Text = "Complete the following form:";
             // 
-            // hiddenChkBox
-            // 
-            this.hiddenChkBox.AutoSize = true;
-            this.hiddenChkBox.Location = new System.Drawing.Point(15, 327);
-            this.hiddenChkBox.Name = "hiddenChkBox";
-            this.hiddenChkBox.Size = new System.Drawing.Size(66, 17);
-            this.hiddenChkBox.TabIndex = 16;
-            this.hiddenChkBox.Text = "Hidden?";
-            this.hiddenChkBox.UseVisualStyleBackColor = true;
-            // 
-            // readChkBox
-            // 
-            this.readChkBox.AutoSize = true;
-            this.readChkBox.Location = new System.Drawing.Point(15, 350);
-            this.readChkBox.Name = "readChkBox";
-            this.readChkBox.Size = new System.Drawing.Size(80, 17);
-            this.readChkBox.TabIndex = 17;
-            this.readChkBox.Text = "Read only?";
-            this.readChkBox.UseVisualStyleBackColor = true;
-            // 
-            // extnsionBox
-            // 
-            this.extnsionBox.Location = new System.Drawing.Point(12, 260);
-            this.extnsionBox.Name = "extnsionBox";
-            this.extnsionBox.Size = new System.Drawing.Size(100, 20);
-            this.extnsionBox.TabIndex = 19;
-            // 
             // extnsionLabel
             // 
             this.extnsionLabel.AutoSize = true;
@@ -266,53 +208,103 @@ namespace Hyria_MyFS
             this.extnsionLabel.Size = new System.Drawing.Size(56, 13);
             this.extnsionLabel.TabIndex = 18;
             this.extnsionLabel.Text = "Extension:";
-            this.extnsionLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // authorChkBox
+            // fileSystemBox
             // 
-            this.authorChkBox.AutoSize = true;
-            this.authorChkBox.Location = new System.Drawing.Point(15, 373);
-            this.authorChkBox.Name = "authorChkBox";
-            this.authorChkBox.Size = new System.Drawing.Size(63, 17);
-            this.authorChkBox.TabIndex = 20;
-            this.authorChkBox.Text = "Author?";
-            this.authorChkBox.UseVisualStyleBackColor = true;
+            this.fileSystemBox.FormattingEnabled = true;
+            this.fileSystemBox.Location = new System.Drawing.Point(265, 170);
+            this.fileSystemBox.Name = "fileSystemBox";
+            this.fileSystemBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.fileSystemBox.Size = new System.Drawing.Size(220, 199);
+            this.fileSystemBox.TabIndex = 22;
             // 
-            // authBox
+            // listofSecLabel
             // 
-            this.authBox.HideSelection = false;
-            this.authBox.Location = new System.Drawing.Point(84, 370);
-            this.authBox.Name = "authBox";
-            this.authBox.Size = new System.Drawing.Size(38, 20);
-            this.authBox.TabIndex = 21;
-            this.authBox.Text = "Initials";
-            this.authBox.Visible = false;
+            this.listofSecLabel.AutoSize = true;
+            this.listofSecLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listofSecLabel.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.listofSecLabel.Location = new System.Drawing.Point(656, 32);
+            this.listofSecLabel.Name = "listofSecLabel";
+            this.listofSecLabel.Size = new System.Drawing.Size(150, 31);
+            this.listofSecLabel.TabIndex = 23;
+            this.listofSecLabel.Text = "List of Sectors";
             // 
-            // listofSectors
+            // rmvBtn
             // 
-            this.listofSectors.FormattingEnabled = true;
-            this.listofSectors.Location = new System.Drawing.Point(265, 170);
-            this.listofSectors.Name = "listofSectors";
-            this.listofSectors.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listofSectors.Size = new System.Drawing.Size(220, 199);
-            this.listofSectors.TabIndex = 22;
+            this.rmvBtn.Location = new System.Drawing.Point(337, 376);
+            this.rmvBtn.Name = "rmvBtn";
+            this.rmvBtn.Size = new System.Drawing.Size(75, 23);
+            this.rmvBtn.TabIndex = 24;
+            this.rmvBtn.Text = "Remove";
+            this.rmvBtn.UseVisualStyleBackColor = true;
+            this.rmvBtn.Click += new System.EventHandler(this.rmvBtn_Click);
             // 
-            // label1
+            // addBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(656, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 31);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "List of Sectors";
+            this.addBtn.Location = new System.Drawing.Point(59, 394);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(75, 23);
+            this.addBtn.TabIndex = 25;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // FSLSector
+            // hiddnChkBx
             // 
-            this.FSLSector.Text = "Sectors";
-            this.FSLSector.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FSLSector.Width = 70;
+            this.hiddnChkBx.AutoSize = true;
+            this.hiddnChkBx.Location = new System.Drawing.Point(7, 325);
+            this.hiddnChkBx.Name = "hiddnChkBx";
+            this.hiddnChkBx.Size = new System.Drawing.Size(66, 17);
+            this.hiddnChkBx.TabIndex = 26;
+            this.hiddnChkBx.Text = "Hidden?";
+            this.hiddnChkBx.UseVisualStyleBackColor = true;
+            this.hiddnChkBx.CheckedChanged += new System.EventHandler(this.hiddnChkBx_CheckedChanged);
+            // 
+            // readonlyChkBx
+            // 
+            this.readonlyChkBx.AutoSize = true;
+            this.readonlyChkBx.Location = new System.Drawing.Point(7, 348);
+            this.readonlyChkBx.Name = "readonlyChkBx";
+            this.readonlyChkBx.Size = new System.Drawing.Size(82, 17);
+            this.readonlyChkBx.TabIndex = 27;
+            this.readonlyChkBx.Text = "Read Only?";
+            this.readonlyChkBx.UseVisualStyleBackColor = true;
+            this.readonlyChkBx.CheckedChanged += new System.EventHandler(this.readonlyChkBx_CheckedChanged);
+            // 
+            // authorChkBx
+            // 
+            this.authorChkBx.AutoSize = true;
+            this.authorChkBx.Location = new System.Drawing.Point(7, 371);
+            this.authorChkBx.Name = "authorChkBx";
+            this.authorChkBx.Size = new System.Drawing.Size(63, 17);
+            this.authorChkBx.TabIndex = 28;
+            this.authorChkBx.Text = "Author?";
+            this.authorChkBx.UseVisualStyleBackColor = true;
+            this.authorChkBx.CheckedChanged += new System.EventHandler(this.authorChkBx_CheckedChanged);
+            // 
+            // filenameBoxInp
+            // 
+            this.filenameBoxInp.Location = new System.Drawing.Point(7, 221);
+            this.filenameBoxInp.Name = "filenameBoxInp";
+            this.filenameBoxInp.Size = new System.Drawing.Size(100, 20);
+            this.filenameBoxInp.TabIndex = 29;
+            this.filenameBoxInp.TextChanged += new System.EventHandler(this.filenameBoxInp_TextChanged);
+            // 
+            // extnsBoxInp
+            // 
+            this.extnsBoxInp.Location = new System.Drawing.Point(7, 260);
+            this.extnsBoxInp.Name = "extnsBoxInp";
+            this.extnsBoxInp.Size = new System.Drawing.Size(100, 20);
+            this.extnsBoxInp.TabIndex = 30;
+            this.extnsBoxInp.TextChanged += new System.EventHandler(this.extnsBoxInp_TextChanged);
+            // 
+            // sizeBoxInp
+            // 
+            this.sizeBoxInp.Location = new System.Drawing.Point(7, 299);
+            this.sizeBoxInp.Name = "sizeBoxInp";
+            this.sizeBoxInp.Size = new System.Drawing.Size(100, 20);
+            this.sizeBoxInp.TabIndex = 31;
+            this.sizeBoxInp.TextChanged += new System.EventHandler(this.sizeBoxInp_TextChanged);
             // 
             // mainForm
             // 
@@ -320,27 +312,26 @@ namespace Hyria_MyFS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(884, 511);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.listofSectors);
-            this.Controls.Add(this.authBox);
-            this.Controls.Add(this.authorChkBox);
-            this.Controls.Add(this.extnsionBox);
+            this.Controls.Add(this.sizeBoxInp);
+            this.Controls.Add(this.extnsBoxInp);
+            this.Controls.Add(this.filenameBoxInp);
+            this.Controls.Add(this.authorChkBx);
+            this.Controls.Add(this.readonlyChkBx);
+            this.Controls.Add(this.hiddnChkBx);
+            this.Controls.Add(this.addBtn);
+            this.Controls.Add(this.rmvBtn);
+            this.Controls.Add(this.listofSecLabel);
+            this.Controls.Add(this.fileSystemBox);
             this.Controls.Add(this.extnsionLabel);
-            this.Controls.Add(this.readChkBox);
-            this.Controls.Add(this.hiddenChkBox);
             this.Controls.Add(this.instructionLabel);
             this.Controls.Add(this.sectorSizLabel);
             this.Controls.Add(this.sectorSizBox);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.appBanner);
             this.Controls.Add(this.fsSecLabel);
-            this.Controls.Add(this.filesizeBox);
-            this.Controls.Add(this.filenameBox);
-            this.Controls.Add(this.rmvButton);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.fileSizeLabel);
             this.Controls.Add(this.fileNameLabel);
-            this.Controls.Add(this.fsList);
+            this.Controls.Add(this.listofSectorsList);
             this.Controls.Add(this.duckIMG);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(900, 550);
@@ -358,13 +349,9 @@ namespace Hyria_MyFS
         #endregion
 
         private System.Windows.Forms.PictureBox duckIMG;
-        private System.Windows.Forms.ListView fsList;
+        private System.Windows.Forms.ListView listofSectorsList;
         private System.Windows.Forms.Label fileNameLabel;
         private System.Windows.Forms.Label fileSizeLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button rmvButton;
-        private System.Windows.Forms.TextBox filenameBox;
-        private System.Windows.Forms.TextBox filesizeBox;
         private System.Windows.Forms.Label fsSecLabel;
         private System.Windows.Forms.Label appBanner;
         private System.Windows.Forms.ColumnHeader FSLName;
@@ -375,15 +362,18 @@ namespace Hyria_MyFS
         private System.Windows.Forms.TextBox sectorSizBox;
         private System.Windows.Forms.Label sectorSizLabel;
         private System.Windows.Forms.Label instructionLabel;
-        private System.Windows.Forms.CheckBox hiddenChkBox;
-        private System.Windows.Forms.CheckBox readChkBox;
-        private System.Windows.Forms.TextBox extnsionBox;
         private System.Windows.Forms.Label extnsionLabel;
-        private System.Windows.Forms.CheckBox authorChkBox;
-        private System.Windows.Forms.TextBox authBox;
-        private System.Windows.Forms.ListBox listofSectors;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox fileSystemBox;
+        private System.Windows.Forms.Label listofSecLabel;
         private System.Windows.Forms.ColumnHeader FSLSector;
+        private System.Windows.Forms.Button rmvBtn;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.CheckBox hiddnChkBx;
+        private System.Windows.Forms.CheckBox readonlyChkBx;
+        private System.Windows.Forms.CheckBox authorChkBx;
+        private System.Windows.Forms.TextBox filenameBoxInp;
+        private System.Windows.Forms.TextBox extnsBoxInp;
+        private System.Windows.Forms.TextBox sizeBoxInp;
     }
 }
 
