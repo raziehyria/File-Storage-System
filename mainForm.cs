@@ -6,19 +6,21 @@ using System.Windows.Forms;
 
 namespace Hyria_MyFS
 {
+    
     public partial class mainForm : Form
     {
+        private int counter = 0;
         public mainForm()
         {
             InitializeComponent();
         }
-
+        
         private void mainForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private int counter = 1;
+
         private void addBtn_Click(object sender, EventArgs e)
         {
             // Get the values from the input controls
@@ -31,8 +33,18 @@ namespace Hyria_MyFS
             int size;
             int sectors;
             string tagname;
+            
+            //adjusting attributes depending on input
+            if (hiddnChkBx.Checked == true)
+                hiddenChar = 'H';
 
-            // program would crash if non numbers were entered, this is to catch that error
+            if (readonlyChkBx.Checked == true)
+                readOnlyChar = 'R';
+
+            if (authorChkBx.Checked == true)
+                authorChar = "RH";
+
+            // checking for only numerical input in size box
             if (!int.TryParse(sizeBoxInp.Text, out size))
             {
                 // The input is not a valid integer, so show an error message
@@ -40,14 +52,13 @@ namespace Hyria_MyFS
                 return;
             }
 
-            // Calculate the number of sectors needed for this item
+            // Calculate the number of sectors needed for the entry
             sectors = (size + 499) / 500;
 
-            // Combine the filename, extension, and size into a single string
+            // Combine the filename, extension, and size into a single string for Tag
             tagname = filename + extension + size.ToString();
 
-            // checking to make sure the file doesnt already exist in the file system
-
+            // checking to make sure the file doesn't already exist in the file system
             foreach (ListViewItem existingItem in fileSystemBox.Items)
             {
                 if (existingItem.Tag.ToString() == tagname)
@@ -57,22 +68,14 @@ namespace Hyria_MyFS
                 }
             }
 
-            if (hiddnChkBx.Checked == true)
-                hiddenChar = 'H';
-
-            if (readonlyChkBx.Checked == true)
-                readOnlyChar = 'R';
-            
-            if (authorChkBx.Checked == true)
-                authorChar = "RH";
-
+            // string that will populate fileSystemBox
             fileInfo = filename + ", " + extension + ", " + size + ", " + hiddenChar + ", " + readOnlyChar + ", " + (authorChar);
-            
-            // Create and Add the new item to the fileSystemBox ListView
+
+            // Create a new ListViewItem for fileSystemBox
             ListViewItem lbitem = new ListViewItem(fileInfo);
             lbitem.Tag = tagname;
 
-            // Create a new ListViewItem with the values
+            // Create a new ListViewItem for listofsectors
             ListViewItem item = new ListViewItem(counter.ToString());
             item.SubItems.Add(filename);
             item.SubItems.Add(extension);
@@ -81,16 +84,16 @@ namespace Hyria_MyFS
             item.SubItems.Add(sectors.ToString());
             item.Tag = tagname;
 
-            // Add the new entry to both lists
+            // Add the new entry's
             fileSystemBox.Items.Add(lbitem);
-            
-            // If the size of a single entry exceeds 500, add additional entries to the sector list
+
+            // Adding to multiple sectors
             if (sectors > 1)
             {
-                
+
                 for (int i = 1; i <= sectors; i++)
                 {
-                    
+
                     // Add the new entry to the list
                     ListViewItem sitem = new ListViewItem(counter.ToString());
                     sitem.SubItems.Add(filename);
@@ -99,9 +102,10 @@ namespace Hyria_MyFS
                     sitem.SubItems.Add((hiddenChar.ToString()) + ", " + (readOnlyChar.ToString()) + ", " + (authorChar));
                     sitem.SubItems.Add(sectors.ToString());
                     sitem.Tag = tagname;
-                    
+
                     // Add the new entry to the list
                     listofSectors.Items.Add(sitem);
+                    counter++;
                     size = size - 500;
 
                 }
@@ -110,14 +114,12 @@ namespace Hyria_MyFS
             else
             {
                 listofSectors.Items.Add(item);
+                // Increment the counter for the next entry
+                counter++;
             }
-            
-            
-            
-            // Increment the counter for the next entry 
-            counter++;
-            
-            // clearing out the textboxes after entry
+
+
+            // resetting text boxes after entry
             filenameBoxInp.Clear();
             extnsBoxInp.Clear();
             sizeBoxInp.Clear();
@@ -138,11 +140,14 @@ namespace Hyria_MyFS
 
                 if (listofSectors.Items[i].Tag != null && listofSectors.Items[i].Tag.ToString() == selectedTag)// using the items tag
                 {   // we let the user know we are removing it from both lists
-                    MessageBox.Show("Removing: " + selectedTag, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     listofSectors.Items.RemoveAt(i);
                 }
             }
+            MessageBox.Show("Removing all entries of: " + selectedTag, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             fileSystemBox.Items.Remove(fileSystemBox.SelectedItems[0]);
+
+            // reset the counter
+            counter = listofSectors.Items.Count;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -197,6 +202,7 @@ namespace Hyria_MyFS
             // Set the ListView's HideSelection property to true
             // to prevent the selection from appearing when the control loses focus
             listofSectors.HideSelection = true;
+            listofSectors.Sort();
         }
         private void fileSystemBox_SelectedIndexChanged(object sender, EventArgs e)
         {
