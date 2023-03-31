@@ -31,7 +31,7 @@ namespace Hyria_MyFS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            ""}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.Control, null);
+            ""}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.ActiveCaption, null);
             this.duckIMG = new System.Windows.Forms.PictureBox();
             this.listofSectors = new System.Windows.Forms.ListView();
             this.Index = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,6 +59,7 @@ namespace Hyria_MyFS
             this.extnsBoxInp = new System.Windows.Forms.TextBox();
             this.sizeBoxInp = new System.Windows.Forms.TextBox();
             this.fileSystemBox = new System.Windows.Forms.ListView();
+            this.currentFiles = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.duckIMG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +75,9 @@ namespace Hyria_MyFS
             // 
             // listofSectors
             // 
+            this.listofSectors.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            this.listofSectors.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.listofSectors.BackgroundImageTiled = true;
             this.listofSectors.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Index,
             this.FSLName,
@@ -81,54 +85,62 @@ namespace Hyria_MyFS
             this.FSLSize,
             this.FSLAttributes,
             this.FSLSector});
-            this.listofSectors.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listofSectors.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.listofSectors.FullRowSelect = true;
+            this.listofSectors.GridLines = true;
             this.listofSectors.HideSelection = false;
             listViewItem1.ToolTipText = "Current files in File System";
             this.listofSectors.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listofSectors.Location = new System.Drawing.Point(533, 67);
+            this.listofSectors.LabelWrap = false;
+            this.listofSectors.Location = new System.Drawing.Point(527, 67);
+            this.listofSectors.MultiSelect = false;
             this.listofSectors.Name = "listofSectors";
-            this.listofSectors.Size = new System.Drawing.Size(409, 380);
+            this.listofSectors.Size = new System.Drawing.Size(415, 380);
             this.listofSectors.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listofSectors.TabIndex = 1;
+            this.listofSectors.TileSize = new System.Drawing.Size(50, 50);
             this.listofSectors.UseCompatibleStateImageBehavior = false;
             this.listofSectors.View = System.Windows.Forms.View.Details;
+            this.listofSectors.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listofSectors_ColumnWidthChanged);
+            this.listofSectors.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listofSectors_ColumnWidthChanging);
             this.listofSectors.SelectedIndexChanged += new System.EventHandler(this.listofSectors_SelectedIndexChanged);
+            this.listofSectors.ContextMenuStripChanged += new System.EventHandler(this.listofSectors_ContextMenuStripChanged);
             // 
             // Index
             // 
             this.Index.Text = "Index";
-            this.Index.Width = 42;
+            this.Index.Width = 45;
             // 
             // FSLName
             // 
             this.FSLName.Text = "Filename";
             this.FSLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FSLName.Width = 70;
+            this.FSLName.Width = 76;
             // 
             // FSExtension
             // 
             this.FSExtension.Text = "Extension";
             this.FSExtension.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FSExtension.Width = 70;
+            this.FSExtension.Width = 78;
             // 
             // FSLSize
             // 
             this.FSLSize.Text = "Size";
             this.FSLSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FSLSize.Width = 57;
+            this.FSLSize.Width = 65;
             // 
             // FSLAttributes
             // 
             this.FSLAttributes.Text = "Attributes";
             this.FSLAttributes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FSLAttributes.Width = 70;
+            this.FSLAttributes.Width = 85;
             // 
             // FSLSector
             // 
             this.FSLSector.Text = "# Sectors";
             this.FSLSector.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FSLSector.Width = 63;
+            this.FSLSector.Width = 64;
             // 
             // fileNameLabel
             // 
@@ -182,6 +194,7 @@ namespace Hyria_MyFS
             // 
             // sectorSizBox
             // 
+            this.sectorSizBox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sectorSizBox.Location = new System.Drawing.Point(79, 119);
             this.sectorSizBox.Name = "sectorSizBox";
             this.sectorSizBox.ReadOnly = true;
@@ -310,14 +323,27 @@ namespace Hyria_MyFS
             // 
             // fileSystemBox
             // 
+            this.fileSystemBox.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.fileSystemBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.currentFiles});
+            this.fileSystemBox.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.fileSystemBox.GridLines = true;
+            this.fileSystemBox.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.fileSystemBox.HideSelection = false;
+            this.fileSystemBox.HoverSelection = true;
             this.fileSystemBox.Location = new System.Drawing.Point(284, 170);
+            this.fileSystemBox.MultiSelect = false;
             this.fileSystemBox.Name = "fileSystemBox";
             this.fileSystemBox.Size = new System.Drawing.Size(198, 195);
             this.fileSystemBox.TabIndex = 32;
             this.fileSystemBox.UseCompatibleStateImageBehavior = false;
-            this.fileSystemBox.View = System.Windows.Forms.View.List;
+            this.fileSystemBox.View = System.Windows.Forms.View.Details;
             this.fileSystemBox.SelectedIndexChanged += new System.EventHandler(this.fileSystemBox_SelectedIndexChanged);
+            // 
+            // currentFiles
+            // 
+            this.currentFiles.Text = "Current Files";
+            this.currentFiles.Width = 198;
             // 
             // mainForm
             // 
@@ -346,6 +372,7 @@ namespace Hyria_MyFS
             this.Controls.Add(this.fileNameLabel);
             this.Controls.Add(this.listofSectors);
             this.Controls.Add(this.duckIMG);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(970, 570);
             this.MinimumSize = new System.Drawing.Size(970, 570);
@@ -386,8 +413,9 @@ namespace Hyria_MyFS
         private System.Windows.Forms.TextBox filenameBoxInp;
         private System.Windows.Forms.TextBox extnsBoxInp;
         private System.Windows.Forms.TextBox sizeBoxInp;
-        private System.Windows.Forms.ColumnHeader Index;
         private System.Windows.Forms.ListView fileSystemBox;
+        private System.Windows.Forms.ColumnHeader currentFiles;
+        private System.Windows.Forms.ColumnHeader Index;
     }
 }
 
