@@ -58,6 +58,7 @@ namespace Hyria_MyFS
             this.sizeBoxInp = new System.Windows.Forms.TextBox();
             this.fileSystemBox = new System.Windows.Forms.ListView();
             this.currentFiles = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sectors = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.duckIMG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,6 @@ namespace Hyria_MyFS
             // listofSectors
             // 
             resources.ApplyResources(this.listofSectors, "listofSectors");
-            this.listofSectors.AutoArrange = false;
             this.listofSectors.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.listofSectors.BackgroundImageTiled = true;
             this.listofSectors.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -88,7 +88,6 @@ namespace Hyria_MyFS
             this.listofSectors.MultiSelect = false;
             this.listofSectors.Name = "listofSectors";
             this.listofSectors.ShowGroups = false;
-            this.listofSectors.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listofSectors.TileSize = new System.Drawing.Size(20, 20);
             this.listofSectors.UseCompatibleStateImageBehavior = false;
             this.listofSectors.View = System.Windows.Forms.View.Details;
@@ -240,7 +239,8 @@ namespace Hyria_MyFS
             resources.ApplyResources(this.fileSystemBox, "fileSystemBox");
             this.fileSystemBox.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.fileSystemBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.currentFiles});
+            this.currentFiles,
+            this.sectors});
             this.fileSystemBox.ForeColor = System.Drawing.SystemColors.Desktop;
             this.fileSystemBox.GridLines = true;
             this.fileSystemBox.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -255,6 +255,10 @@ namespace Hyria_MyFS
             // currentFiles
             // 
             resources.ApplyResources(this.currentFiles, "currentFiles");
+            // 
+            // sectors
+            // 
+            resources.ApplyResources(this.sectors, "sectors");
             // 
             // mainForm
             // 
@@ -323,6 +327,7 @@ namespace Hyria_MyFS
         private System.Windows.Forms.ListView fileSystemBox;
         private System.Windows.Forms.ColumnHeader currentFiles;
         private System.Windows.Forms.ColumnHeader Index;
+        private System.Windows.Forms.ColumnHeader sectors;
     }
 }
 

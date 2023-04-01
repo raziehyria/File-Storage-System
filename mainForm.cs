@@ -53,7 +53,7 @@ namespace Hyria_MyFS
             }
 
             // Calculate the number of sectors needed for the entry
-            sectors = (size + 499) / 500;
+            sectors = (int)Math.Ceiling((double)size / 500);
 
             // Combine the filename, extension, and size into a single string for Tag
             tagname = filename + extension + size.ToString();
@@ -73,6 +73,7 @@ namespace Hyria_MyFS
 
             // Create a new ListViewItem for fileSystemBox
             ListViewItem lbitem = new ListViewItem(fileInfo);
+            lbitem.SubItems.Add(sectors.ToString());
             lbitem.Tag = tagname;
 
             // Create a new ListViewItem for listofsectors
@@ -93,12 +94,14 @@ namespace Hyria_MyFS
 
                 for (int i = 1; i <= sectors; i++)
                 {
-                    
+                    // Determine the size of the current sector
+                    int sectorSize = size > 500 ? 500 : size; // if more than 500, max 500, else remaining val
+
                     // Add the new entry to the list
                     ListViewItem sitem = new ListViewItem(counter.ToString());
                     sitem.SubItems.Add(filename);
                     sitem.SubItems.Add(extension);
-                    sitem.SubItems.Add(size.ToString());
+                    sitem.SubItems.Add(sectorSize.ToString());
                     sitem.SubItems.Add((hiddenChar.ToString()) + ", " + (readOnlyChar.ToString()) + ", " + (authorChar));
                     sitem.SubItems.Add(sectors.ToString());
                     sitem.Tag = tagname;
@@ -106,7 +109,8 @@ namespace Hyria_MyFS
                     // Add the new entry to the list
                     listofSectors.Items.Add(sitem);
                     counter++;
-                    size = size - 500;
+                    
+                    size -= sectorSize; // deincrement the totsize by 500
 
                 }
             }

@@ -121,6 +121,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>954, 531</value>
   </data>
+  <data name="&gt;&gt;filenameBoxInp.Name" xml:space="preserve">
+    <value>filenameBoxInp</value>
+  </data>
   <data name="&gt;&gt;instructionLabel.Name" xml:space="preserve">
     <value>instructionLabel</value>
   </data>
@@ -150,6 +153,9 @@
   <data name="hiddnChkBx.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="hiddnChkBx.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
   <data name="listofSecLabel.Text" xml:space="preserve">
     <value>List of Sectors</value>
   </data>
@@ -177,11 +183,14 @@
   <data name="&gt;&gt;duckIMG.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="fsSecLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 31</value>
+  </data>
   <data name="&gt;&gt;authorChkBx.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="authorChkBx.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="readonlyChkBx.Text" xml:space="preserve">
+    <value>Read Only?</value>
   </data>
   <data name="duckIMG.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -215,9 +224,6 @@
   </data>
   <data name="&gt;&gt;hiddnChkBx.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="sectorSizLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 122</value>
   </data>
   <data name="authorChkBx.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 371</value>
@@ -253,9 +259,6 @@
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>970, 570</value>
   </data>
-  <data name="FSLName.Text" xml:space="preserve">
-    <value>Filename</value>
-  </data>
   <data name="&gt;&gt;extnsBoxInp.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -280,6 +283,9 @@
   <data name="addBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>59, 394</value>
   </data>
+  <data name="rmvBtn.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
   <data name="&gt;&gt;instructionLabel.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
@@ -289,8 +295,11 @@
   <data name="&gt;&gt;duckIMG.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fileSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+  <data name="&gt;&gt;sectors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FSLName.Text" xml:space="preserve">
+    <value>Filename</value>
   </data>
   <data name="&gt;&gt;fsSecLabel.ZOrder" xml:space="preserve">
     <value>16</value>
@@ -313,9 +322,6 @@
   <data name="readonlyChkBx.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
   </data>
-  <data name="&gt;&gt;Index.Name" xml:space="preserve">
-    <value>Index</value>
-  </data>
   <data name="extnsionLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 244</value>
   </data>
@@ -328,17 +334,26 @@
   <data name="authorChkBx.Text" xml:space="preserve">
     <value>Author?</value>
   </data>
+  <data name="FSLSize.Text" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="&gt;&gt;sectors.Name" xml:space="preserve">
+    <value>sectors</value>
+  </data>
   <data name="&gt;&gt;rmvBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;hiddnChkBx.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;readonlyChkBx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="authorChkBx.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="fileNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="fileSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>mainForm</value>
@@ -351,9 +366,6 @@
   </data>
   <data name="exitButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 476</value>
-  </data>
-  <data name="filenameBoxInp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
   </data>
   <data name="&gt;&gt;FSLSize.Name" xml:space="preserve">
     <value>FSLSize</value>
@@ -373,11 +385,11 @@
   <data name="&gt;&gt;appBanner.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;FSLSector.Name" xml:space="preserve">
-    <value>FSLSector</value>
-  </data>
-  <data name="&gt;&gt;filenameBoxInp.Parent" xml:space="preserve">
+  <data name="&gt;&gt;instructionLabel.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;duckIMG.ZOrder" xml:space="preserve">
+    <value>20</value>
   </data>
   <data name="&gt;&gt;appBanner.Parent" xml:space="preserve">
     <value>$this</value>
@@ -393,9 +405,6 @@
   </data>
   <data name="listofSecLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 31</value>
-  </data>
-  <data name="readonlyChkBx.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="listofSecLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -442,6 +451,9 @@
   <data name="&gt;&gt;addBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="fileSizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;sizeBoxInp.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -450,6 +462,9 @@
   </data>
   <data name="instructionLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 17</value>
+  </data>
+  <data name="instructionLabel.Text" xml:space="preserve">
+    <value>Complete the following form:</value>
   </data>
   <data name="&gt;&gt;readonlyChkBx.Parent" xml:space="preserve">
     <value>$this</value>
@@ -475,8 +490,8 @@
   <data name="fileSystemBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 195</value>
   </data>
-  <data name="&gt;&gt;sectorSizBox.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="&gt;&gt;duckIMG.Name" xml:space="preserve">
+    <value>duckIMG</value>
   </data>
   <data name="extnsionLabel.Text" xml:space="preserve">
     <value>Extension:</value>
@@ -486,9 +501,6 @@
   </data>
   <data name="&gt;&gt;listofSectors.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FSLAttributes.Name" xml:space="preserve">
-    <value>FSLAttributes</value>
   </data>
   <data name="appBanner.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 9</value>
@@ -2946,11 +2958,11 @@
   <data name="&gt;&gt;listofSectors.Name" xml:space="preserve">
     <value>listofSectors</value>
   </data>
-  <data name="hiddnChkBx.Text" xml:space="preserve">
-    <value>Hidden?</value>
+  <data name="FSExtension.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="fsSecLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 31</value>
+  <data name="sectorSizLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 122</value>
   </data>
   <data name="duckIMG.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 90</value>
@@ -2973,23 +2985,17 @@
   <data name="fileSizeLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="addBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="filenameBoxInp.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;fileSystemBox.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="sectorSizLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="hiddnChkBx.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 17</value>
   </data>
-  <data name="readonlyChkBx.Text" xml:space="preserve">
-    <value>Read Only?</value>
-  </data>
   <data name="&gt;&gt;readonlyChkBx.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="fileSizeLabel.Text" xml:space="preserve">
+    <value>File size:</value>
   </data>
   <data name="&gt;&gt;addBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2997,23 +3003,23 @@
   <data name="fileSystemBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>284, 170</value>
   </data>
-  <data name="&gt;&gt;FSLSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;fileNameLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;fsSecLabel.Name" xml:space="preserve">
     <value>fsSecLabel</value>
   </data>
+  <data name="&gt;&gt;sectorSizBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="listofSectors.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="fileSizeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;filenameBoxInp.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="hiddnChkBx.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+  <data name="&gt;&gt;readonlyChkBx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="readonlyChkBx.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 348</value>
@@ -3024,8 +3030,8 @@
   <data name="fsSecLabel.Text" xml:space="preserve">
     <value>File System Listbox</value>
   </data>
-  <data name="&gt;&gt;instructionLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;FSLAttributes.Name" xml:space="preserve">
+    <value>FSLAttributes</value>
   </data>
   <data name="&gt;&gt;exitButton.ZOrder" xml:space="preserve">
     <value>14</value>
@@ -3033,14 +3039,20 @@
   <data name="&gt;&gt;fsSecLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;duckIMG.ZOrder" xml:space="preserve">
-    <value>20</value>
+  <data name="addBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="addBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;filenameBoxInp.Name" xml:space="preserve">
-    <value>filenameBoxInp</value>
+  <data name="&gt;&gt;FSLSector.Name" xml:space="preserve">
+    <value>FSLSector</value>
+  </data>
+  <data name="sectorSizLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="listofSecLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tempus Sans ITC, 18pt</value>
   </data>
   <data name="extnsionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -3048,8 +3060,8 @@
   <data name="authorChkBx.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
-  <data name="listofSecLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tempus Sans ITC, 18pt</value>
+  <data name="&gt;&gt;sectorSizBox.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="&gt;&gt;extnsionLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3060,8 +3072,8 @@
   <data name="filenameBoxInp.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 221</value>
   </data>
-  <data name="&gt;&gt;sectorSizBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="filenameBoxInp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
   </data>
   <data name="extnsBoxInp.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -3078,20 +3090,17 @@
   <data name="&gt;&gt;hiddnChkBx.Name" xml:space="preserve">
     <value>hiddnChkBx</value>
   </data>
-  <data name="readonlyChkBx.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
   <data name="&gt;&gt;rmvBtn.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="fsSecLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tempus Sans ITC, 18pt</value>
   </data>
   <data name="rmvBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>345, 376</value>
   </data>
-  <data name="instructionLabel.Text" xml:space="preserve">
-    <value>Complete the following form:</value>
-  </data>
-  <data name="appBanner.Text" xml:space="preserve">
-    <value>Razie's File Manager </value>
+  <data name="&gt;&gt;FSLSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="sectorSizBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 119</value>
@@ -3099,20 +3108,17 @@
   <data name="&gt;&gt;hiddnChkBx.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="rmvBtn.Text" xml:space="preserve">
-    <value>Remove</value>
+  <data name="&gt;&gt;fileSystemBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;duckIMG.Name" xml:space="preserve">
-    <value>duckIMG</value>
+  <data name="&gt;&gt;Index.Name" xml:space="preserve">
+    <value>Index</value>
   </data>
   <data name="FSLAttributes.Width" type="System.Int32, mscorlib">
     <value>85</value>
   </data>
-  <data name="fsSecLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tempus Sans ITC, 18pt</value>
-  </data>
-  <data name="sectorSizBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
+  <data name="appBanner.Text" xml:space="preserve">
+    <value>Razie's File Manager </value>
   </data>
   <data name="extnsionLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5794,7 +5800,7 @@
   <data name="&gt;&gt;listofSecLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="sectorSizLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="readonlyChkBx.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="appBanner.Font" type="System.Drawing.Font, System.Drawing">
@@ -5815,8 +5821,8 @@
   <data name="&gt;&gt;sectorSizLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fileSizeLabel.Text" xml:space="preserve">
-    <value>File size:</value>
+  <data name="hiddnChkBx.Text" xml:space="preserve">
+    <value>Hidden?</value>
   </data>
   <data name="exitButton.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -5833,11 +5839,11 @@
   <data name="FSLSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="sectorSizLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="filenameBoxInp.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
   </data>
-  <data name="&gt;&gt;authorChkBx.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="sectorSizBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
   </data>
   <data name="fileNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5845,8 +5851,8 @@
   <data name="fileNameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
   </data>
-  <data name="FSLSize.Text" xml:space="preserve">
-    <value>Size</value>
+  <data name="readonlyChkBx.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
   <data name="&gt;&gt;listofSecLabel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -5854,14 +5860,14 @@
   <data name="&gt;&gt;addBtn.Name" xml:space="preserve">
     <value>addBtn</value>
   </data>
-  <data name="instructionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 170</value>
+  <data name="&gt;&gt;authorChkBx.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="listofSectors.Location" type="System.Drawing.Point, System.Drawing">
     <value>527, 67</value>
   </data>
-  <data name="FSExtension.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="instructionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 170</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
